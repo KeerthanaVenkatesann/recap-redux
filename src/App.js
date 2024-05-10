@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './Components/Layout';
+import Crud from './Components/Redux/Crud';
+import Counter from './Components/Redux/Counter';
+import Form from './Components/Crudoperation/Form';
+import Table from './Components/Crudoperation/Table';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+  <Routes>
+    <Route path='/'element={<Layout/>}></Route>
+    <Route path='/crud'element={<Crud/>}></Route>
+    <Route path='/counter'element={<Counter/>}></Route>
+    <Route path='/form'element={<Form/>}></Route>
+    <Route path='/table'element={<Table/>}></Route>
+
+  </Routes>
+  </BrowserRouter>
   );
 }
 
